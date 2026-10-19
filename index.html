@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wired To Work Tool Kit | Groundwork Collaborative</title>
+<meta name="description" content="Interactive tools for the Wired To Work course from Groundwork Collaborative.">
+<link rel="stylesheet" href="gwc-theme.css">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--gwc-bg);
+    color: var(--gwc-navy);
+    font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  }
+  a { color: inherit; }
+  .skip { position: absolute; left: -999px; top: 0; background: var(--gwc-white); padding: 10px 14px; z-index: 10; }
+  .skip:focus { left: 8px; top: 8px; }
+  header.hero {
+    background: var(--gwc-navy);
+    color: var(--gwc-white);
+    border-bottom: 6px solid var(--gwc-blush);
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  .hero .wrap { padding-top: 28px; padding-bottom: 56px; }
+  .topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .brand { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--gwc-pale); font-weight: 600; }
+  .back {
+    display: inline-block;
+    padding: 11px 20px;
+    min-height: 44px;
+    border-radius: 999px;
+    background: var(--gwc-blush);
+    color: var(--gwc-navy);
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+  }
+  .back:hover { background: var(--gwc-white); }
+  .back[hidden] { display: none; }
+  h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.08; margin: 44px 0 14px; letter-spacing: -.01em; }
+  .hero p.lead { font-size: 20px; max-width: 620px; margin: 0; color: var(--gwc-pale); }
+  .accent-bar { width: 64px; height: 5px; background: var(--gwc-teal); border-radius: 3px; margin-top: 28px; }
+  main .wrap { padding-top: 44px; padding-bottom: 24px; }
+  .section-label { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--gwc-blue); font-weight: 700; margin: 0 0 6px; }
+  h2 { font-size: 28px; margin: 0 0 22px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; list-style: none; padding: 0; margin: 0; }
+  .card {
+    display: flex; flex-direction: column; height: 100%;
+    background: var(--gwc-white);
+    border: 1px solid var(--gwc-pale);
+    border-top: 5px solid var(--gwc-teal);
+    border-radius: 12px;
+    padding: 22px 22px 20px;
+    text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(1, 42, 78, .12); border-top-color: var(--gwc-cyan); }
+  .tag { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--gwc-blue); font-weight: 700; }
+  .card h3 { font-size: 21px; margin: 6px 0 8px; color: var(--gwc-navy); }
+  .card p { margin: 0 0 18px; color: var(--gwc-blue); font-size: 16px; flex: 1; }
+  .open { font-weight: 700; color: var(--gwc-teal-deep); font-size: 15px; }
+  .open::after { content: " \2192"; }
+  .note {
+    margin: 40px 0 0;
+    background: var(--gwc-blush-tint);
+    border-left: 6px solid var(--gwc-blush);
+    border-radius: 8px;
+    padding: 18px 22px;
+    font-size: 16px;
+  }
+  footer { margin-top: 48px; background: var(--gwc-navy); color: var(--gwc-pale); font-size: 14px; }
+  footer .wrap { padding-top: 24px; padding-bottom: 28px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  footer a { color: var(--gwc-white); }
+  @media (prefers-reduced-motion: reduce) { .card { transition: none; } .card:hover { transform: none; } }
+  @media (max-width: 520px) { body { font-size: 16px; } .wrap { padding: 0 18px; } .hero .wrap { padding-top: 22px; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#tools">Skip to the tools</a>
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <span class="brand">Groundwork Collaborative</span>
+      <a class="back" id="backLink" href="#" hidden>Back to the course</a>
+    </div>
+    <h1>Wired To Work Tool Kit</h1>
+    <p class="lead">Eight tools to use alongside the course. Open one when your lesson points you to it. Come back any time.</p>
+    <div class="accent-bar" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main id="tools">
+  <div class="wrap">
+    <p class="section-label">Your tools</p>
+    <h2>Pick a tool</h2>
+    <ul class="grid">
+      <li><a class="card" href="daily%20rhythm%20regulation/">
+        <span class="tag">Routine</span>
+        <h3>Daily Rhythm and Regulation</h3>
+        <p>Build your week and plan your day. Check in honestly so you catch dysregulation early.</p>
+        <span class="open">Open the tool</span></a></li>
+      <li><a class="card" href="job%20search%20tracker/">
+        <span class="tag">Job search</span>
+        <h3>Job Search Tracker</h3>
+        <p>Log every application and the reason behind it. Patterns show up over time.</p>
+        <span class="open">Open the tool</span></a></li>
+      <li><a class="card" href="Resume%20Bullet%20Bank/">
+        <span class="tag">Resume</span>
+        <h3>Resume Bullet Bank</h3>
+        <p>Build strong resume bullets from your own experience.</p>
+        <span class="open">Open the tool</span></a></li>
+      <li><a class="card" href="Interview%20Prep/">
+        <span class="tag">Interviews</span>
+        <h3>Interview Prep</h3>
+        <p>Choose your interview format. Get tips for it and a checklist to finish before the day.</p>
+        <span class="open">Open the tool</span></a></li>
+      <li><a class="card" href="STAR%20Practice/">
+        <span class="tag">Interviews</span>
+        <h3>STAR Practice</h3>
+        <p>Write your answers, then check them for Situation, Task, Action and Result.</p>
+        <span class="open">Open the tool</span></a></li>
+      <li><a class="card" href="Meeting%20Prep/">
+        <span class="tag">On the job</span>
+        <h3>Meeting Prep Builder</h3>
+        <p>Prepare for one on ones, team meetings and hard conversations with step by step prompts.</p>
+        <span class="open">Open the tool</span></a></li>
+      <li><a class="card" href="Offer%20Calculator/">
+        <span class="tag">Offers</span>
+        <h3>Offer Calculator</h3>
+        <p>Work out what a job offer is worth before you answer.</p>
+        <span class="open">Open the tool</span></a></li>
+      <li><a class="card" href="Glossary%20Search/">
+        <span class="tag">Reference</span>
+        <h3>Workplace Glossary</h3>
+        <p>Look up a word, phrase or office expression. See what people actually mean.</p>
+        <span class="open">Open the tool</span></a></li>
+    </ul>
+    <p class="note">Most tools keep your answers in your own browser on your own device. Look for the Save your work panel to download a copy.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Groundwork Collaborative</span>
+    <span>Wired To Work: Your Brain, Your Path</span>
+  </div>
+</footer>
+
+<script>
+  // Paste the course web address between the quotes to show the Back to the course button.
+  var COURSE_URL = "";
+  if (COURSE_URL) {
+    var b = document.getElementById('backLink');
+    b.href = COURSE_URL;
+    b.hidden = false;
+  }
+</script>
+</body>
+</html>
